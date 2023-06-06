@@ -25,28 +25,26 @@
 
 
 ### 目录结构说明
-
- ```
-
-├─app  
-│ │ __init__.py  
-│ │  
-│ ├─user  
-│ │ │ models.py  
-│ │ │ urls.py  
-│ │ │ views.py  
-│ │ │ __init__.py  
-│ │ │  
-│ │ └─__pycache__  
-│ │ __init__.cpython-38.pyc  
-│ │
+```
+│  main.py				程序主入口
+│  README.md			README
+│  requirements.txt		依赖文件
 │  
-├─settings  
-│ │ config.py  
-│ │ __init__.py
-│  0
-└─utils  
-│interceptor.py  
-│__init__.py
+├─app		app应用目录
+│  │  __init__.py	app初始化/注册
+│  │  
+│  └─user	子应用
+│          models.py	数据模型类
+│          urls.py		url路由入口
+│          views.py		视图函数
+│          __init__.py	子应用初始化/注册
+│          
+├─settings	项目配置
+│      config.py
+│      __init__.py
+│      
+└─utils		项目通用工具
+        interceptor.py
+        __init__.py
 
 ```
