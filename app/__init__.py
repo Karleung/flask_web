@@ -10,6 +10,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from redis import StrictRedis
 
+from interceptors.error_handler import registry_error_handler
 from settings.config import config_dict
 
 db = SQLAlchemy()
@@ -42,6 +43,7 @@ def create_app(config_name):
 
     # 1.创建app
     app = create_flask_app(config_name)
+    registry_error_handler(app)
     # 2.注册拓展组件
     register_extensions(app)
     # 3.注册蓝图

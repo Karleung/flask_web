@@ -6,7 +6,7 @@
 # @github: https://github.com/Karleung
 import logging
 from app import create_app
-from flask import jsonify
+from common.response_code import code_message
 
 # 1.调用工厂方法创建app
 app = create_app("dev")
@@ -19,7 +19,7 @@ LOG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
 @app.route('/')
 def index():
     rule_dict = {rule.rule: rule.endpoint for rule in app.url_map.iter_rules()}
-    return jsonify(rule_dict)
+    return code_message(rule_dict)
 
 
 if __name__ == '__main__':
